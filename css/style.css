@@ -1,0 +1,11 @@
+img {
+    height: 100px;
+    width: 100px;
+}
+
+.ranNum {
+    background-color: blueviolet;
+    width: 20%;
+    height:50%;
+    font-size: 100px;
+}

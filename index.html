@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <title>Crystal game</title>
+</head>
+<body>
+ <div>
+     Directions: You will be given a random number at the start of the game
+     There are four crystals below. Cick on a crystal to add a specific amount of points to your total score
+     You win the game by matching the total score to a random number, you lose the game if your total score goes above the random number
+     The value of each crystal is hidden form you until you click on each
+     Each time the game starts, the game will change the values of each crystal 
+ </div>  
+ <div class = "crystal1text"> </div>
+ <div class = "crystal2text"> </div>
+ <div class = "crystal3text"> </div>
+ <div class = "crystal4text"> </div>
+  <img id = "crystal1" src="https://previews.123rf.com/images/lnsdes/lnsdes1510/lnsdes151000104/47787432-blue-amethyst-crystal-isolated-watercolor-painting-on-white-background.jpg" alt="Crystal1">
+  <img id = "crystal2" src="https://previews.123rf.com/images/lnsdes/lnsdes1510/lnsdes151000104/47787432-blue-amethyst-crystal-isolated-watercolor-painting-on-white-background.jpg" alt="Crystal1">
+  <img id = "crystal3" src="https://previews.123rf.com/images/lnsdes/lnsdes1510/lnsdes151000104/47787432-blue-amethyst-crystal-isolated-watercolor-painting-on-white-background.jpg" alt="Crystal1">
+  <img id = "crystal4" src="https://previews.123rf.com/images/lnsdes/lnsdes1510/lnsdes151000104/47787432-blue-amethyst-crystal-isolated-watercolor-painting-on-white-background.jpg" alt="Crystal1">
+ <div class = "ranNum" > </div>
+ <div class = "total"> </div>
+  <script>
+$(document).ready(function() {
+
+      var totalNum = 0;
+      var randomNumber = [Math.floor(Math.random()*500)];
+      //[Math.floor(Math.random()*500)];
+      var firstCrystalval = [Math.floor(Math.random()*10)];
+      var secondCrystalval = [Math.floor(Math.random()*10)];
+      var thirdCrystalval = [Math.floor(Math.random()*10)];
+      var fourthCrystalval = [Math.floor(Math.random()*10)];
+      
+      //ar userTotal =  $(".total"); 
+          $(".ranNum").html(randomNumber);
+
+         
+
+              $(".crystal1text").html(firstCrystalval);
+
+              $("#crystal1").on("click",function() {
+
+                totalNum += parseInt(firstCrystalval);
+
+             $(".total").html(totalNum);
+                console.log ("Total is" + totalNum);
+
+checkWin();
+              });
+
+               $(".crystal2text").html(secondCrystalval);
+
+            $("#crystal2").on("click",function() {
+
+            totalNum += parseInt(secondCrystalval);
+
+                $(".total").html(totalNum);
+            console.log ("Total is " + totalNum);
+
+
+checkWin();
+
+            });
+            $(".crystal3text").html(thirdCrystalval);
+
+        $("#crystal3").on("click",function() {
+
+        totalNum += parseInt(thirdCrystalval);
+
+            $(".total").html(totalNum);
+       console.log ("total is" + totalNum);
+
+checkWin();
+
+});
+
+ $(".crystal4text").html(fourthCrystalval);
+
+        $("#crystal4").on("click",function() {
+
+        totalNum += parseInt(fourthCrystalval);
+
+$(".total").html(totalNum);
+        console.log ("total is" + totalNum);
+
+
+checkWin();
+
+});
+
+//totalNum=randomNumber;
+ // console.log (" LA LA total is" + totalNum);
+ //console.log ("randomnumber" + randomNumber);
+ //$(".total").html(totalNum);
+
+ function checkWin() {
+ $(".total").html(totalNum);
+  if (totalNum === randomNumber) {
+   
+    $(".total").html(totalNum);
+    alert ("You Win!");
+  }        
+
+  else if (totalNum > randomNumber)
+{
+
+    alert ("Loser!!");
+}
+
+}
+
+    });
+  </script>
+</body>
+</html>
