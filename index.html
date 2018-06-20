@@ -26,7 +26,12 @@
   <img id = "crystal3" src="https://previews.123rf.com/images/lnsdes/lnsdes1510/lnsdes151000104/47787432-blue-amethyst-crystal-isolated-watercolor-painting-on-white-background.jpg" alt="Crystal1">
   <img id = "crystal4" src="https://previews.123rf.com/images/lnsdes/lnsdes1510/lnsdes151000104/47787432-blue-amethyst-crystal-isolated-watercolor-painting-on-white-background.jpg" alt="Crystal1">
  <div class = "ranNum" > </div>
- <div class = "total"> </div>
+ Total: <div class = "total"> </div>
+
+ Wins: <div class = "wins"></div> 
+
+ Loss: <div class = "loss"></div>
+
   <script>
 $(document).ready(function() {
 
@@ -37,7 +42,8 @@ $(document).ready(function() {
       var secondCrystalval = [Math.floor(Math.random()*10)];
       var thirdCrystalval = [Math.floor(Math.random()*10)];
       var fourthCrystalval = [Math.floor(Math.random()*10)];
-      
+      var wins = 0; 
+      var loss = 0; 
       //ar userTotal =  $(".total"); 
           $(".ranNum").html(randomNumber);
 
@@ -106,13 +112,17 @@ checkWin();
    
     $(".total").html(totalNum);
     alert ("You Win!");
+    wins ++;
   }        
 
   else if (totalNum > randomNumber)
 {
 
     alert ("Loser!!");
+    loss ++
 }
+$(".wins").html(wins);
+$(".loss").html(loss);
 
 }
 
