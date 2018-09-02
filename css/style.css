@@ -1,11 +1,12 @@
 img {
     height: 100px;
     width: 100px;
+    padding: 0;
 }
 
 .ranNum {
     background-color: blueviolet;
-    width: 70%;
+    width: 40%;
     height:50%;
     font-size: 100px;
 }
@@ -38,4 +39,10 @@ img {
     background-color: lightgreen;
     width: 43%;
     height: 300px;
+}
+
+.info {
+    font-size : 30px;
+    background-color: gold;
+    width: 40%;
 }
